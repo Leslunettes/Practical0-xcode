@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D5FEAEF91FA2991300BC5AD3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5FEAEF81FA2991300BC5AD3 /* main.cpp */; };
+		D5FEAF061FA2992200BC5AD3 /* InputHelper.o in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FEAEFF1FA2992200BC5AD3 /* InputHelper.o */; };
+		D5FEAF071FA2992200BC5AD3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5FEAF021FA2992200BC5AD3 /* main.cpp */; };
+		D5FEAF081FA2992200BC5AD3 /* InputHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5FEAF031FA2992200BC5AD3 /* InputHelper.cpp */; };
+		D5FEAF091FA2992200BC5AD3 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = D5FEAF041FA2992200BC5AD3 /* makefile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +27,13 @@
 
 /* Begin PBXFileReference section */
 		D5FEAEF51FA2991300BC5AD3 /* Practical0-xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Practical0-xcode"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5FEAEF81FA2991300BC5AD3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D5FEAEFF1FA2992200BC5AD3 /* InputHelper.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = InputHelper.o; sourceTree = "<group>"; };
+		D5FEAF001FA2992200BC5AD3 /* InputHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHelper.h; sourceTree = "<group>"; };
+		D5FEAF011FA2992200BC5AD3 /* main */ = {isa = PBXFileReference; lastKnownFileType = file; path = main; sourceTree = "<group>"; };
+		D5FEAF021FA2992200BC5AD3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../main.cpp; sourceTree = "<group>"; };
+		D5FEAF031FA2992200BC5AD3 /* InputHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputHelper.cpp; sourceTree = "<group>"; };
+		D5FEAF041FA2992200BC5AD3 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		D5FEAF051FA2992200BC5AD3 /* main.sol */ = {isa = PBXFileReference; lastKnownFileType = file; path = main.sol; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5FEAF061FA2992200BC5AD3 /* InputHelper.o in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,7 +67,13 @@
 		D5FEAEF71FA2991300BC5AD3 /* Practical0-xcode */ = {
 			isa = PBXGroup;
 			children = (
-				D5FEAEF81FA2991300BC5AD3 /* main.cpp */,
+				D5FEAF031FA2992200BC5AD3 /* InputHelper.cpp */,
+				D5FEAF001FA2992200BC5AD3 /* InputHelper.h */,
+				D5FEAEFF1FA2992200BC5AD3 /* InputHelper.o */,
+				D5FEAF011FA2992200BC5AD3 /* main */,
+				D5FEAF021FA2992200BC5AD3 /* main.cpp */,
+				D5FEAF051FA2992200BC5AD3 /* main.sol */,
+				D5FEAF041FA2992200BC5AD3 /* makefile */,
 			);
 			path = "Practical0-xcode";
 			sourceTree = "<group>";
@@ -119,7 +135,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5FEAEF91FA2991300BC5AD3 /* main.cpp in Sources */,
+				D5FEAF071FA2992200BC5AD3 /* main.cpp in Sources */,
+				D5FEAF091FA2992200BC5AD3 /* makefile in Sources */,
+				D5FEAF081FA2992200BC5AD3 /* InputHelper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
