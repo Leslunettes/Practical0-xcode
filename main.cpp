@@ -53,11 +53,11 @@ bool getStartEnd(uint& start, uint& end);
 // code in the main in order to "connect" the functions you are implementing.
 
 // Declarations of functions to complete
-bool whichArray(...);
-void initialize(...);
+bool whichArray(uint arr0[], uint arr1[],uint arr2[],uint arr0s,uint arr0e,uint arr1s,uint arr1e,uint arr2s,uint arr2e, uint *pointeurtab,uint *pointeurstart,uint *pointeurend);
+void initialize(uint *pointeurtab,uint *pointeurstart,uint *pointeurend, uint& start, uint& end, uint& val);
 void increment(...);
 void replace(...);
-void output(...);
+void output(uint *pointeurtab,uint *pointeurstart,uint *pointeurend);
 
 int main(int argc, char* argv[]) {
     
@@ -77,9 +77,9 @@ int main(int argc, char* argv[]) {
     uint arr1s{SIZE0},arr1e{0};
     uint arr2s{SIZE0},arr2e{0};
     
-    uint *pointeurtab;
-    uint *pointeurstart;
-    uint *pointeurend;
+    uint *pointeurtab=0;
+    uint *pointeurstart=0;
+    uint *pointeurend=0;
     
     while (true) {
         outputMessage();
@@ -89,7 +89,7 @@ int main(int argc, char* argv[]) {
             case 1: {
                 // Complete the function whichArray that allows the user to
                 // choose which of the three arrays to work on.
-                if (!whichArray(/* ... add parameters ... */)) {
+                if (!whichArray(arr0,  arr1, arr2, arr0s, arr0e, arr1s, arr1e, arr2s, arr2e,  pointeurtab, pointeurstart, pointeurend)) {
                     break;
                 }
                 
@@ -104,12 +104,12 @@ int main(int argc, char* argv[]) {
                 
                 // Complete the function initialize.
                 // Initialize the chosen range in the chosen array with the chosen value
-                initialize(/* ... add parameters ... */);
+                initialize(pointeurtab,pointeurstart,pointeurend, start, end,val);
             }
                 break;
             case 2: {
                 // Use the function whichArray that was implemented with case 1.
-                if (!whichArray(/* ... add parameters ... */)) {
+                if (!whichArray(arr0,  arr1, arr2, arr0s, arr0e, arr1s, arr1e, arr2s, arr2e,  pointeurtab, pointeurstart, pointeurend)) {
                     break;
                 }
                 // Get from the user where to update the locations of the array.
@@ -133,13 +133,13 @@ int main(int argc, char* argv[]) {
                 // Use the function whichArray that was implemented with case 1 to
                 // choose the first array
                 cout << "Choose the first array. ";
-                if (!whichArray(/* ... add parameters ... */)) {
+                if (!whichArray(arr0,  arr1, arr2, arr0s, arr0e, arr1s, arr1e, arr2s, arr2e,  pointeurtab, pointeurstart, pointeurend)) {
                     break;
                 }
                 // Use the function whichArray that was implemented with case 1 to
                 // choose the first array
                 cout << "Choose the second array. ";
-                if (!whichArray(/* ... add parameters ... */)) {
+                if (!whichArray(arr0,  arr1, arr2, arr0s, arr0e, arr1s, arr1e, arr2s, arr2e,  pointeurtab, pointeurstart, pointeurend)) {
                     break;
                 }
                 // Get from the user where to update the locations of the array.
@@ -158,12 +158,12 @@ int main(int argc, char* argv[]) {
             case 4: {
                 // Use the function whichArray that was implemented with case 1 to
                 // choose the first array
-                if (!whichArray(/* ... add parameters ... */)) {
+                if (!whichArray(arr0,  arr1, arr2, arr0s, arr0e, arr1s, arr1e, arr2s, arr2e,  pointeurtab, pointeurstart, pointeurend)) {
                     break;
                 }
                 // Complete the function output
                 // Output the active part of the array
-                output(/* ... add parameters ... */);
+                output(pointeurtab,pointeurstart,pointeurend);
                 
             }
                 break;
@@ -196,21 +196,25 @@ bool whichArray(uint arr0[], uint arr1[],uint arr2[],uint arr0s,uint arr0e,uint 
         case 1: {
             pointeurtab = arr1;
             pointeurstart = &arr1s;
-            pointeurend = &arr2e;
+            pointeurend = &arr1e;
             break;
         }
         default: {
-            pointeurtab = arr3;
-            pointeurstart = &arr0s;
-            pointeurend = &arr0e;
+            pointeurtab = arr2;
+            pointeurstart = &arr2s;
+            pointeurend = &arr2e;
             break;
         }
     }
     return true;
 }
 
-void initialize(...) {
-    // ...
+void initialize(uint *pointeurtab,uint *pointeurstart,uint *pointeurend, uint& start, uint& end, uint& val) {
+    *pointeurstart=start;// changer si on change les valeurs tu tableau et que les valeurs sont plus rendre ou si on depasse la taille
+    //*pointeurend=end;
+    for(int i =start;i<end; i++){
+        pointeurtab[ i ] = val;
+    }
 }
 
 void increment(...) {
@@ -220,8 +224,11 @@ void increment(...) {
 void replace(...) {
 }
 
-void output(...) {
-    // ...
+void output(uint *pointeurtab,uint *pointeurstart,uint *pointeurend) {
+    // verifier les valeur de tab
+    for (uint i = *pointeurstart; i < *pointeurend; i++) {
+        cout << pointeurtab[i];
+    }
 }
 
 
