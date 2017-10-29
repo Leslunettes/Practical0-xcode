@@ -73,13 +73,13 @@ int main(int argc, char* argv[]) {
     
     // The start (s)and end (e) locations in the arrays.
     // These variables indicate the active area of the array.
-    uint arr0s{SIZE0},arr0e{0};
+    uint arr0s{0},arr0e{SIZE0};
     uint arr1s{SIZE0},arr1e{0};
     uint arr2s{SIZE0},arr2e{0};
     
-    uint *pointeurtab=0;
-    uint *pointeurstart=0;
-    uint *pointeurend=0;
+    uint *pointeurtab= nullptr;
+    uint *pointeurstart = nullptr;
+    uint *pointeurend = nullptr;
     
     while (true) {
         outputMessage();
@@ -210,10 +210,14 @@ bool whichArray(uint arr0[], uint arr1[],uint arr2[],uint arr0s,uint arr0e,uint 
 }
 
 void initialize(uint *pointeurtab,uint *pointeurstart,uint *pointeurend, uint& start, uint& end, uint& val) {
-    *pointeurstart=start;// changer si on change les valeurs tu tableau et que les valeurs sont plus rendre ou si on depasse la taille
-    //*pointeurend=end;
-    for(int i =start;i<end; i++){
-        pointeurtab[ i ] = val;
+    pointeurstart= &start;// changer si on change les valeurs tu tableau et que les valeurs sont plus rendre ou si on depasse la taille
+    cout << *pointeurstart;
+    pointeurend=&end;
+    cout << *pointeurend;
+    for(int i = start;i<end; i++){
+        *(pointeurtab+i) = val;
+        
+        //pointeurtab++;
     }
 }
 
@@ -226,9 +230,11 @@ void replace(...) {
 
 void output(uint *pointeurtab,uint *pointeurstart,uint *pointeurend) {
     // verifier les valeur de tab
-    for (uint i = *pointeurstart; i < *pointeurend; i++) {
-        cout << pointeurtab[i];
+    cout << *pointeurstart;
+    for (uint i = 0; i < 10; i++) {
+        cout << "i="<< pointeurtab[i]<< " ";
     }
+    cout << "fgh" <<endl;
 }
 
 
